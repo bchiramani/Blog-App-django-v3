@@ -83,7 +83,7 @@ class BlogTest(TestCase):
             'author': self.user,
         })
         self.assertEqual(request.status_code, 302)
-        self.assertRedirects(request, '/accounts/login/?next=/new/')        
+        self.assertRedirects(request, '/accounts/login/?next=/new/')      
 
 
     def test_blog_update_view_for_logged_in_user(self):
