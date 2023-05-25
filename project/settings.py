@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.core.exceptions import ImproperlyConfigured
+import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,8 +29,6 @@ def get_secret_key():
 
 SECRET_KEY = get_secret_key()
 
-# SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 
 DEBUG = True

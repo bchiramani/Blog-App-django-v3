@@ -42,3 +42,5 @@ jobs:
             DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
         run: |
           python manage.py test
+
+  
