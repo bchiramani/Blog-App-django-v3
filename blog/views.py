@@ -1,4 +1,4 @@
-from django.shortcuts import render             # works for funtion based views
+from django.shortcuts import render             # works for function based views
 from .models import Blog
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin # allows only logged in users to access website data

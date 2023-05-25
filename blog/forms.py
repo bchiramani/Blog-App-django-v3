@@ -7,7 +7,7 @@ from .models import Blog
 class UpdateBlog(ModelForm):
     class Meta:
         model   = Blog 
-        fields  = ('title', 'body', 'author')
+        fields  = ('title', 'body', 'author')#, 'image')
         widgets = {
             'body': Textarea(attrs={'cols':120,'rows':15}),
         }
