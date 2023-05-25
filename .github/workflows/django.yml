@@ -26,6 +26,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install django
+          pip install Pillow
           $CONDA/bin/conda env update --file environment.yml --name blog
 
       - name: Lint with flake8
