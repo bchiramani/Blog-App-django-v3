@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -18,9 +19,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+def get_secret_key():
+    """Get the secret key from the environment or GitHub secret."""
+    secret_key = os.environ.get('DJANGO_SECRET_KEY')
+    if not secret_key:
+        raise ImproperlyConfigured("Please set the DJANGO_SECRET_KEY environment variable or GitHub secret.")
+    return secret_key
+
+SECRET_KEY = get_secret_key()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 
 DEBUG = True
