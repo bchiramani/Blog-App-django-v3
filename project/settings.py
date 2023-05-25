@@ -124,3 +124,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'blog_list'   # requires an html file (login.html).
 
 LOGOUT_REDIRECT_URL = 'blog_list'  # doesn't require any html file.
+
+# Add the following at the end of the file
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')

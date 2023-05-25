@@ -26,6 +26,10 @@
 </ul>
 <br>
 
+{% if blog.image %}
+        <img src="{{ blog.image.url }}" alt="{{ blog.title }} Image">
+{% endif %}
+
 <div class="card border-secondary">
   <div class="card-body">
     {{ blog.body|linebreaks }}

@@ -51,6 +51,12 @@ class BlogUpdate(LoginRequiredMixin, UpdateView):
         if obj.author != self.request.user:
             raise PermissionDenied
         return super().dispatch(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        if 'image' in self.request.FILES:
+            form.instance.image = self.request.FILES['image']
+        return super().form_valid(form)
+    
 
 
 class BlogDelete(LoginRequiredMixin, DeleteView):

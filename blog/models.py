@@ -9,7 +9,7 @@ class Blog(models.Model):
     title  = models.CharField(max_length = 120)
     body   = models.TextField(max_length = 3000)
     author = models.ForeignKey('auth.user', on_delete = models.CASCADE, default = 1)
-    # image = models.ImageField(upload_to = 'images/', blank = True, null = True)
+    image = models.ImageField(upload_to = '.', blank = True, null = True)
     #author  = models.ForeignKey(User, default = 1, null = True, on_delete = models.SET_NULL)
     
     def __str__(self):
