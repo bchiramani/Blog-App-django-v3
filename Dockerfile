@@ -8,9 +8,21 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory in the container
 WORKDIR /code
 
-# Install dependencies
-COPY requirements.txt /code/
-RUN pip install -r requirements.txt
+# Install Conda
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-latest-Linux-x86_64.sh && \
+    /opt/conda/bin/conda init && \
+    echo "conda activate" >> ~/.bashrc
+
+# Copy environment.yml file and create Conda environment
+COPY environment.yml /code/environment.yml
+RUN /opt/conda/bin/conda env create -f environment.yml
+
+# Activate Conda environment
+SHELL ["conda", "run", "-n", "blog", "/bin/bash", "-c"]
 
 # Copy project files
 COPY . /code/

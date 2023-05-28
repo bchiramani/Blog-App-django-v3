@@ -32,7 +32,8 @@ SECRET_KEY = get_secret_key()
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# vercel_app/settings.py
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition

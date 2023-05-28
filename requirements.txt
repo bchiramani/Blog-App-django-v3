@@ -1,4 +1,15 @@
 asgiref @ file:///work/ci_py311/asgiref_1676843199969/work
+bandit==1.7.5
 Django @ file:///work/ci_py311/django_1676851927387/work
+gitdb==4.0.10
+GitPython==3.1.31
+markdown-it-py==2.2.0
+mdurl==0.1.2
+pbr==5.11.1
 Pillow==9.5.0
+Pygments==2.15.1
+PyYAML==6.0
+rich==13.3.5
+smmap==5.0.0
 sqlparse @ file:///work/ci_py311/sqlparse_1676828845822/work
+stevedore==5.1.0
